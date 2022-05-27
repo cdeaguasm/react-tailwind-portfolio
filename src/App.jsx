@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "./components/HeroSection";
+import Services from "./components/Services";
 
 function App() {
   const [theme, setTheme] = useState(null);
@@ -10,8 +11,6 @@ function App() {
     } else {
       setTheme("light");
     }
-
-    console.log(theme);
   }, []);
 
   useEffect(() => {
@@ -36,7 +35,10 @@ function App() {
         {theme === "dark" ? "🌙" : "🌞"}
       </button>
       <div className="font-inter bg:white dark:bg-slate-900">
-        <HeroSection></HeroSection>
+        <div className="max-w-5xl mx-auto w-11/12">
+          <HeroSection></HeroSection>
+          <Services></Services>
+        </div>
       </div>
     </>
   );
